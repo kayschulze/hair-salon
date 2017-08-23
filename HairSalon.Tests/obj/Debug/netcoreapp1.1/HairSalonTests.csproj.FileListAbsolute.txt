@@ -1,0 +1,13 @@
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\HairSalonTests.deps.json
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\HairSalonTests.runtimeconfig.json
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\HairSalonTests.runtimeconfig.dev.json
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\obj\Debug\netcoreapp1.1\HairSalonTests.AssemblyInfo.cs
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\HairSalonTests.dll
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\HairSalonTests.pdb
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\hairsalon.dll
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\bin\Debug\netcoreapp1.1\hairsalon.pdb
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\obj\Debug\netcoreapp1.1\HairSalonTests.dll
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon.Tests\obj\Debug\netcoreapp1.1\HairSalonTests.pdb

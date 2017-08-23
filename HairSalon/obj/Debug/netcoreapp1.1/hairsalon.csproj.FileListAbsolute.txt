@@ -1,0 +1,8 @@
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon\bin\Debug\netcoreapp1.1\hairsalon.deps.json
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon\bin\Debug\netcoreapp1.1\hairsalon.runtimeconfig.json
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon\bin\Debug\netcoreapp1.1\hairsalon.runtimeconfig.dev.json
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon\obj\Debug\netcoreapp1.1\hairsalon.AssemblyInfo.cs
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon\bin\Debug\netcoreapp1.1\hairsalon.dll
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon\bin\Debug\netcoreapp1.1\hairsalon.pdb
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon\obj\Debug\netcoreapp1.1\hairsalon.dll
+C:\Users\kayob\Desktop\Epicodus\Hair-Salon.Solutions\HairSalon\obj\Debug\netcoreapp1.1\hairsalon.pdb
