@@ -28,6 +28,20 @@ namespace HairSalon.Test
             CollectionAssert.AreEqual(testList, resultList);
         }
 
+        [TestMethod]
+        public void Find_FindsStylistInDatabase_Stylist()
+        {
+            //Arrange
+            Stylist testStylist = new Stylist("Yvonne Renwick");
+            testStylist.Save();
+
+            //Act
+            Stylist foundStylist = Stylist.Find(testStylist.GetId());
+
+            //Assert
+            Assert.AreEqual(testStylist, foundStylist);
+        }
+
         public void Dispose()
         {
             //Client.DeleteAll();

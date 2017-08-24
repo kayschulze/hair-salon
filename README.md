@@ -16,12 +16,12 @@ _The user can input different stylists and their clients.  Information is stored
 | Behavior | Input | Output | Reasoning |
 | ---- | ---- | ---- | ---- |
 | 1. Add a new stylist to system. | name: "Yvonne Renwick", stylist_id = 1 | name: "Yvonne Renwick", stylist_id = 1 | Stylists need to be created before any data is stored |
-| 2. Display a list of all stylists. | "Yvonne Renwick", "Jackie Schulze" | "Yvonne Renwick", "Jackie Schulze" | Once we have stylists, we can then list them.|
-| 3. Find stylist | stylist name = "Yvonne Renwick" | stylist_id = 1 | It is important to link the stylist name with the primary key of the id |
-| 4. Add new clients to a specific stylist. | stylist_name = "Yvonne Renwick", name: "Wesley Crusher", phone_number = 206-555-1701, address = "1234 Enterprise Road", id = 1 | stylist_name = "Yvonne Renwick", name: "Wesley Crusher", phone_number = 206-555-1701, address = "1234 Enterprise Road", id = 1 | Each stylist must be able to hold a client. |
-| 5. Select individual stylist and see details. | stylist: "Yvonne Renwick" | stylist: "Yvonne Renwick", stylist_id = 1, clients: "Wesley Crusher", "Jean Luc Picard" |
-| 6. Update a client's name. | client_name = "Beverly Crusher", "Beverly Picard" | "Beverly Picard" | It is important for employees to be able to make edits for various reasons. |
-| 7. Delete a specific client. | "Wesley Crusher" | deleted | Wesley went to Star Fleet Academy |
+
+| 2. Find stylist | stylist name = "Yvonne Renwick" | stylist_id = 1 | It is important to link the stylist name with the primary key of the id |
+| 3. Add new clients to a specific stylist. | stylist_name = "Yvonne Renwick", name: "Wesley Crusher", phone_number = 206-555-1701, address = "1234 Enterprise Road", id = 1 | stylist_name = "Yvonne Renwick", name: "Wesley Crusher", phone_number = 206-555-1701, address = "1234 Enterprise Road", id = 1 | Each stylist must be able to hold a client. |
+| 4. Select individual stylist and see details. | stylist: "Yvonne Renwick" | stylist: "Yvonne Renwick", stylist_id = 1, clients: "Wesley Crusher", "Jean Luc Picard" |
+| 5. Update a client's name. | client_name = "Beverly Crusher", "Beverly Picard" | "Beverly Picard" | It is important for employees to be able to make edits for various reasons. |
+| 6. Delete a specific client. | "Wesley Crusher" | deleted | Wesley went to Star Fleet Academy |
 
 ## Known Bugs
 
