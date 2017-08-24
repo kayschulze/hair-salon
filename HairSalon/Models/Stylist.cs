@@ -110,8 +110,8 @@ namespace HairSalon.Models
 
             while(rdr.Read())
             {
-                stylistId = rdr.GetInt32(1);
-                stylistName = rdr.GetString(0);
+                stylistId = rdr.GetInt32(0);
+                stylistName = rdr.GetString(1);
             }
 
             Stylist newStylist = new Stylist(stylistName, stylistId);
@@ -123,6 +123,22 @@ namespace HairSalon.Models
             }
 
             return newStylist;
+        }
+
+        public static void DeleteAll()
+        {
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"DELETE FROM stylists;";
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
         }
     }
 }

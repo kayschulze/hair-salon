@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using HairSalon.Models;
 
-namespace HairSalon.Test
+namespace HairSalon.Tests
 {
     [TestClass]
     public class StylistTests : IDisposable
@@ -44,8 +44,8 @@ namespace HairSalon.Test
 
         public void Dispose()
         {
-            //Client.DeleteAll();
-            //Stylist.DeleteAll();
+            Client.DeleteAll();
+            Stylist.DeleteAll();
         }
     }
 }
