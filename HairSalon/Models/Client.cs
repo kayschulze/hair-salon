@@ -75,26 +75,26 @@ namespace HairSalon.Models
             conn.Open();
 
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"INSERT INTO clients(name, address, phonenumber, stylist_id) VALUES (@name, @address, @phonenumber, @stylist_id);";
+            cmd.CommandText = @"INSERT INTO clients(name, address, phone_number, stylist_id) VALUES (@name, @address, @phone_number, @stylist_id);";
 
             MySqlParameter name = new MySqlParameter();
             name.ParameterName = "@name";
-            name.Value = _name;
+            name.Value = this._name;
             cmd.Parameters.Add(name);
 
             MySqlParameter address = new MySqlParameter();
             address.ParameterName = "@address";
-            address.Value = _address;
+            address.Value = this._address;
             cmd.Parameters.Add(address);
 
             MySqlParameter phonenumber = new MySqlParameter();
-            phonenumber.ParameterName = "@phonenumber";
-            phonenumber.Value = _phonenumber;
+            phonenumber.ParameterName = "@phone_number";
+            phonenumber.Value = this._phonenumber;
             cmd.Parameters.Add(phonenumber);
 
             MySqlParameter stylistId = new MySqlParameter();
             stylistId.ParameterName = "@stylist_id";
-            stylistId.Value = _stylistId;
+            stylistId.Value = this._stylistId;
             cmd.Parameters.Add(stylistId);
 
             cmd.ExecuteNonQuery();
@@ -105,6 +105,40 @@ namespace HairSalon.Models
             {
                 conn.Dispose();
             }
+        }
+
+        public static List<Client> GetAll()
+        {
+            List<Client> allClients = new List<Client> {};
+
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"SELECT * FROM clients;";
+
+            var rdr = cmd.ExecuteReader() as MySqlDataReader;
+
+            while(rdr.Read())
+            {
+                string clientAddress = rdr.GetString(3);
+                int clientId = rdr.GetInt32(0);
+                string clientName = rdr.GetString(1);
+                string clientPhoneNumber = rdr.GetString(2);
+                int clientStylistId = rdr.GetInt32(4);
+
+                Client newClient = new Client(clientName, clientAddress, clientPhoneNumber, clientStylistId, clientId);
+
+                allClients.Add(newClient);
+            }
+
+            conn.Close();
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
+
+            return allClients;
         }
 
         public static void DeleteAll()
