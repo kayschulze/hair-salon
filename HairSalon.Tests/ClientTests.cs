@@ -61,16 +61,14 @@ namespace HairSalon.Tests
         public void DeleteClient_DeleteSpecifiedClient()
         {
             //Arrange
-            Client testClient = new Client("Wesley Crusher", "1234 Enterprise Road", "206-555-1701", 1);
+            Client firstClient = new Client("Wesley Crusher", "1234 Enterprise Road", "206-555-1701", 1);
             testClient.Save();
-            // Client secondClient = new Client("Beverly Crusher", "876 Sick Bay", "206-777-1701", 5)
+            Client secondClient = new Client("Beverly Crusher", "876 Sick Bay", "206-777-1701", 5)
 
-            //List<Client> testClientList = new List<Client> {firstClient, secondClient};
-
-            Client nullClient = new Client();
+            List<Client> testClientList = new List<Client> {firstClient, secondClient};
 
             //Act
-            firstClient.DeleteClient(firstClient.GetId());
+            firstClient.DeleteClient();
 
             //Assert
             Assert.AreEqual(nullClient, testClient);

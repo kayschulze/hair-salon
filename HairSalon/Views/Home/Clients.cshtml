@@ -7,7 +7,7 @@
     <h3>No Clients have been added yet!</h3>
 }
 
-@foreach (var client in Model)
+@foreach (var client in Model["clients"])
 {
     <h3><a href="/clients/@client.GetStylistId()/@client.GetId()">@client.GetName()</a></h3>
 }

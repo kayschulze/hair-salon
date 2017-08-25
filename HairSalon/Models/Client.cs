@@ -219,7 +219,7 @@ namespace HairSalon.Models
             }
         }
 
-        public void DeleteClient(int id)
+        public void DeleteClient()
         {
             MySqlConnection conn = DB.Connection();
             conn.Open();

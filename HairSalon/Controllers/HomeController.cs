@@ -56,6 +56,8 @@ namespace HairSalon.Controllers
             string clientaddress = Request.Form["new_client_address"];
             string clientphonenumber = Request.Form["new_client_phonenumber"];
 
+            Find(stylistId);
+
             Client newClient = new Client(clientname, clientaddress, clientphonenumber, stylistid);
             newClient.Save();
             return View(newClient);
