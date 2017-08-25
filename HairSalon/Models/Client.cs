@@ -141,6 +141,45 @@ namespace HairSalon.Models
             return allClients;
         }
 
+        public void UpdateClient(string newName, string newAddress, string newPhoneNumber, int clientId)
+        {
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"UPDATE clients SET name = @newName, address = @newAddress, phone_number = @newPhoneNumber WHERE id = @searchId;";
+
+            MySqlParameter searchId = new MySqlParameter();
+            searchId.ParameterName = "@searchId";
+            searchId.Value = _id;
+            cmd.Parameters.Add(searchId);
+
+            MySqlParameter name = new MySqlParameter();
+            name.ParameterName = "@newName";
+            name.Value = newName;
+            cmd.Parameters.Add(name);
+
+            MySqlParameter address = new MySqlParameter();
+            address.ParameterName = "@newAddress";
+            address.Value = newAddress;
+            cmd.Parameters.Add(address);
+
+            MySqlParameter phonenumber = new MySqlParameter();
+            phonenumber.ParameterName = "@newPhoneNumber";
+            phonenumber.Value = newPhoneNumber;
+            cmd.Parameters.Add(phonenumber);
+
+            cmd.ExecuteNonQuery();
+            _name = newName;
+            _address = newAddress;
+            _phonenumber = newPhoneNumber;
+
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
+        }
+
         public static void DeleteAll()
         {
             MySqlConnection conn = DB.Connection();

@@ -39,6 +39,24 @@ namespace HairSalon.Tests
             CollectionAssert.AreEqual(testList, resultList);
         }
 
+        [TestMethod]
+        public void UpdateClient_ClientUpdatesNameAddressPhoneNumber_Client()
+        {
+            //Arrange
+            Client testClient = new Client("Beverly Crusher", "876 Sick Bay", "206-777-1701", 5);
+
+            //Act
+            string newName = "Beverly Picard";
+            string newAddress = "111 Bridge Way";
+            string newPhoneNumber = "206-555-1701";
+            Client expectedClient = new Client(newName, newAddress, newPhoneNumber, testClient.GetStylistId());
+
+            testClient.UpdateClient(newName, newAddress, newPhoneNumber, testClient.GetStylistId());
+
+            //Assert
+            Assert.AreEqual(expectedClient, testClient);
+        }
+
         public void Dispose()
         {
             Stylist.DeleteAll();
