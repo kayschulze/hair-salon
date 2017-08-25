@@ -76,10 +76,10 @@ namespace HairSalon.Models
 
             while(rdr.Read())
             {
-                int StylistId = rdr.GetInt32(0);
-                string StylistName = rdr.GetString(1);
+                int stylistId = rdr.GetInt32(0);
+                string stylistName = rdr.GetString(1);
 
-                Stylist newStylist = new Stylist(StylistName, StylistId);
+                Stylist newStylist = new Stylist(stylistName, stylistId);
                 allStylists.Add(newStylist);
             }
 
@@ -124,6 +124,37 @@ namespace HairSalon.Models
 
             return newStylist;
         }
+
+        // public static Stylist FindStylistId(string name)
+        // {
+        //     MySqlConnection conn = DB.Connection();
+        //     conn.Open();
+        //     var cmd = conn.CreateCommand() as MySqlCommand;
+        //     cmd.CommandText = @"SELECT * FROM stylists WHERE name = (@searchName);";
+        //
+        //     MySqlParameter searchName = new MySqlParameter();
+        //     searchName.ParameterName = "@searchName";
+        //     searchName.Value = name;
+        //     cmd.Parameters.Add(searchName);
+        //
+        //     var rdr = cmd.ExecuteReader() as MySqlDataReader;
+        //     int stylistId = 0;
+        //     string stylistName = "";
+        //
+        //     while(rdr.Read())
+        //     {
+        //         stylistId = rdr.GetInt32(0);
+        //         stylistName = rdr.GetString(1);
+        //     }
+        //
+        //     conn.Close();
+        //     if (conn != null)
+        //     {
+        //         conn.Dispose();
+        //     }
+        //
+        //     return newStylist;
+        // }
 
         public List<Client> GetStylistClients()
         {

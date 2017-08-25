@@ -1,0 +1,9 @@
+All Clients for @Model["stylists"].GetName():
+
+<ul>
+@foreach (var client in @Model["clients"])
+{
+    <li><a href="/clients/@Model["stylist"].GetId()/@Model["client"].GetId()">@client.GetName()</li>
+}
+
+<p><a href='/'>Return to Main Page</a></p>

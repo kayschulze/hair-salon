@@ -20,7 +20,6 @@ _The user can input different stylists and their clients.  Information is stored
 | 3. Client class can be created to override equals. | firstClient, secondClient | true | Make sure this works with the database. |
 | 4. Add new clients to a specific stylist. | stylist_name = "Yvonne Renwick", name: "Wesley Crusher", phone_number = 206-555-1701, address = "1234 Enterprise Road", id = 1 | stylist_name = "Yvonne Renwick", name: "Wesley Crusher", phone_number = 206-555-1701, address = "1234 Enterprise Road", id = 1 | Each stylist must be able to hold a client. |
 | 5. Select individual stylist and see clients. | stylist: "Yvonne Renwick" | stylist: "Yvonne Renwick", stylist_id = 1, clients: "Wesley Crusher", "Jean Luc Picard" |
-| 6. Select a client and display client details. | "Wesley Crusher" | name: "Wesley Crusher", phone_number = 206-555-1701, address = "1234 Enterprise Road", id = 1 |
 | 6. Update a client's name, address, phone number. | client_name = "Beverly Crusher", "876 Sick Bay", "206-777-1701" to "Beverly Picard", "111 Bridge Way", "206-555-1701" | "Beverly Picard" | It is important for employees to be able to make edits for various reasons. |
 | 7. Delete a specific client. | "Wesley Crusher" | deleted | Wesley went to Star Fleet Academy |
 

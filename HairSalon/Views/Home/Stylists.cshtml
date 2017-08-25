@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+
+@if (@Model.Count == 0)
+{
+    <h3>No Stylists have been added yet!</h3>
+}
+
+@foreach (var stylist in Model)
+{
+    <h3><a href="/stylists/@stylist.GetId()">@stylist.GetName()</a></h3>
+}
+
+<a href="/clients/new">Add New Client</a>
+
+<p><a href='/'>Back home</a></p>

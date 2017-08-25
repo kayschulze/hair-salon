@@ -57,6 +57,25 @@ namespace HairSalon.Tests
             Assert.AreEqual(expectedClient, testClient);
         }
 
+        [TestMethod]
+        public void DeleteClient_DeleteSpecifiedClient()
+        {
+            //Arrange
+            Client testClient = new Client("Wesley Crusher", "1234 Enterprise Road", "206-555-1701", 1);
+            testClient.Save();
+            // Client secondClient = new Client("Beverly Crusher", "876 Sick Bay", "206-777-1701", 5)
+
+            //List<Client> testClientList = new List<Client> {firstClient, secondClient};
+
+            Client nullClient = new Client();
+
+            //Act
+            firstClient.DeleteClient(firstClient.GetId());
+
+            //Assert
+            Assert.AreEqual(nullClient, testClient);
+        }
+
         public void Dispose()
         {
             Stylist.DeleteAll();
