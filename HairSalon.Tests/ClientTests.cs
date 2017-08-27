@@ -80,6 +80,23 @@ namespace HairSalon.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void GetAllStylistClients_AllClientsReturned_ClientList()
+        {
+            //Arrange
+            Client firstClient = new Client("Wesley Crusher", "1234 Enterprise Road", "206-555-1701", 1);
+            firstClient.Save();
+            Client secondClient = new Client("Beverly Crusher", "876 Sick Bay", "206-777-1701", 1);
+            secondClient.Save();
+
+            //Act
+            List<Client> resultList = Client.GetAllStylistClients(1);
+            List<Client> testList = new List<Client> {firstClient, secondClient};
+
+            //Assert
+            CollectionAssert.AreEqual(testList, resultList);
+        }
+
         public void Dispose()
         {
             Stylist.DeleteAll();

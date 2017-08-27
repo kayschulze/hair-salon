@@ -22,6 +22,7 @@ _The user can input different stylists and their clients.  Information is stored
 | 5. Select individual stylist and see clients. | stylist: "Yvonne Renwick" | stylist: "Yvonne Renwick", stylist_id = 1, clients: "Wesley Crusher", "Jean Luc Picard" |
 | 6. Update a client's name, address, phone number. | client_name = "Beverly Crusher", "876 Sick Bay", "206-777-1701" to "Beverly Picard", "111 Bridge Way", "206-555-1701" | "Beverly Picard" | It is important for employees to be able to make edits for various reasons. |
 | 7. Delete a specific client. | "Wesley Crusher" | deleted | Wesley went to Star Fleet Academy |
+| 8. Get all clients for a stylist. | "Wesley Crusher", "1234 Enterprise Road", "206-555-1701", 1, "Beverly Crusher", "876 Sick Bay", "206-777-1701", 1 | "Wesley Crusher", "1234 Enterprise Road", "206-555-1701", 1, "Beverly Crusher", "876 Sick Bay", "206-777-1701", 1 | This method is necessary to list stylist details. |
 
 ## Known Bugs
 
