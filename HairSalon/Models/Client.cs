@@ -46,6 +46,11 @@ namespace HairSalon.Models
             return _id;
         }
 
+        public void SetId(int id)
+        {
+            _id = id;
+        }
+
         public override bool Equals(System.Object otherClient)
         {
             if (!(otherClient is Client))
@@ -141,6 +146,46 @@ namespace HairSalon.Models
             return allClients;
         }
 
+        public static List<Client> GetAllStylistClients(int stylistid)
+        {
+            List<Client> allStylistClients = new List<Client> {};
+
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"SELECT * FROM clients WHERE stylist_id = (@searchStylistId);";
+
+            MySqlParameter searchStylistId = new MySqlParameter();
+            searchStylistId.ParameterName = "@searchStylistId";
+            searchStylistId.Value = stylistid;
+            cmd.Parameters.Add(searchStylistId);
+
+            var rdr = cmd.ExecuteReader() as MySqlDataReader;
+
+            while(rdr.Read())
+            {
+                string clientAddress = rdr.GetString(3);
+                int clientId = rdr.GetInt32(0);
+                string clientName = rdr.GetString(1);
+                string clientPhoneNumber = rdr.GetString(2);
+                int clientStylistId = rdr.GetInt32(4);
+
+                Client newClient = new Client(clientName, clientAddress, clientPhoneNumber, clientStylistId, clientId);
+
+                allStylistClients.Add(newClient);
+                Console.WriteLine(newClient.GetName());
+            }
+
+            conn.Close();
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
+
+            return allStylistClients;
+        }
+
         public static Client Find(int id)
         {
             MySqlConnection conn = DB.Connection();
@@ -219,13 +264,19 @@ namespace HairSalon.Models
             }
         }
 
-        public void DeleteClient()
+        public static void DeleteClient(int clientId)
         {
-            MySqlConnection conn = DB.Connection();
+            MySqlConnection conn = DB.Connection() as MySqlConnection;
             conn.Open();
 
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"DELETE FROM clients WHERE id = @searchId;";
+            cmd.CommandText = @"DELETE FROM clients WHERE id = @clientId;";
+
+            MySqlParameter thisClientId = new MySqlParameter();
+            thisClientId.ParameterName = "@clientId";
+            thisClientId.Value = clientId;
+            cmd.Parameters.Add(thisClientId);
+
             cmd.ExecuteNonQuery();
 
             conn.Close();

@@ -62,16 +62,22 @@ namespace HairSalon.Tests
         {
             //Arrange
             Client firstClient = new Client("Wesley Crusher", "1234 Enterprise Road", "206-555-1701", 1);
-            testClient.Save();
-            Client secondClient = new Client("Beverly Crusher", "876 Sick Bay", "206-777-1701", 5)
+            firstClient.Save();
+            Client secondClient = new Client("Beverly Crusher", "876 Sick Bay", "206-777-1701", 5);
+            secondClient.Save();
 
-            List<Client> testClientList = new List<Client> {firstClient, secondClient};
+            //List<Client> testClientList = new List<Client> {firstClient, secondClient};
+
+            //List<Client> expectedClientList = new List<Client> {secondClient};
 
             //Act
-            firstClient.DeleteClient();
+            Client.DeleteClient(firstClient.GetId());
+
+            bool expected = false;
+            bool actual = Client.GetAll().Contains(firstClient);
 
             //Assert
-            Assert.AreEqual(nullClient, testClient);
+            Assert.AreEqual(expected, actual);
         }
 
         public void Dispose()

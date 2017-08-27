@@ -35,11 +35,11 @@ namespace HairSalon.Controllers
             return View();
         }
 
-        [HttpGet("/stylist/{stylistid}")]
+        [HttpGet("/stylists/{stylistid}")]
         public ActionResult StylistDetails(int stylistid)
         {
-            Stylist selectedStylist = Stylist.Find(stylistid);
-            return View(selectedStylist);
+            List<Client> StylistClients = Client.GetAllStylistClients(stylistid);
+            return View(StylistClients);
         }
 
         [HttpGet("/clients")]
@@ -52,22 +52,22 @@ namespace HairSalon.Controllers
         [HttpPost("/clients/add/{stylistid}")]
         public ActionResult AddClient(int stylistid)
         {
-            string clientname = Request.Form["new_client_name"];
-            string clientaddress = Request.Form["new_client_address"];
-            string clientphonenumber = Request.Form["new_client_phonenumber"];
+            string clientname = Request.Form["new-client-name"];
+            string clientaddress = Request.Form["new-client-address"];
+            string clientphonenumber = Request.Form["new-client-phonenumber"];
 
             Client newClient = new Client(clientname, clientaddress, clientphonenumber, stylistid);
             newClient.Save();
             return View(newClient);
         }
 
-        [HttpGet("/clients/new")]
-        public ActionResult ClientForm()
+        [HttpGet("/clients/new/{stylistid}")]
+        public ActionResult ClientForm(int stylistid)
         {
             return View();
         }
 
-        [HttpGet("/clients/{stylistid}/{clientid}")]
+        [HttpGet("/clients/{clientid}")]
         public ActionResult ClientDetails(int clientid)
         {
             Client selectedClient = Client.Find(clientid);
