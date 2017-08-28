@@ -1,0 +1,30 @@
+body {
+    background-image: url("/img/hairback.jpg");
+    background-size: cover;
+    font-family: 'Marko One', serif;
+    text-align: center;
+    color: #f7e2d7;
+}
+
+h1 {
+    background-color: #e58f2d;
+    border-radius: 80px;
+    border-width: thick;
+    text-align: center;
+    height: 80px;
+    padding: 20px;
+    color: #f7d5af;
+}
+
+button {
+    background-color: #6d3210;
+    padding: 20px;
+    border: thin;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+p {
+    text-align: center;
+}

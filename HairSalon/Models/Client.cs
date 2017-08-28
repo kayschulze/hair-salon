@@ -174,7 +174,6 @@ namespace HairSalon.Models
                 Client newClient = new Client(clientName, clientAddress, clientPhoneNumber, clientStylistId, clientId);
 
                 allStylistClients.Add(newClient);
-                Console.WriteLine(newClient.GetName());
             }
 
             conn.Close();

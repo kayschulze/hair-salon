@@ -64,7 +64,7 @@ namespace HairSalon.Controllers
         [HttpGet("/clients/new/{stylistid}")]
         public ActionResult ClientForm(int stylistid)
         {
-            return View();
+            return View(stylistid);
         }
 
         [HttpGet("/clients/{clientid}")]
