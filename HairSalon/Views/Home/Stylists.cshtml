@@ -10,4 +10,5 @@
 @foreach (var stylist in Model)
 {
     <h3><a href="/stylists/@stylist.GetId()">@stylist.GetName()</a></h3>
+    <a href="/clients/new/@stylist.GetId()">Add New Client for @stylist.GetName()</a>
 }

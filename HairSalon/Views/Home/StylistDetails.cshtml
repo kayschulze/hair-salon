@@ -14,7 +14,7 @@
     <ul>
     @foreach (var client in Model)
     {
-        <li><a href="/clients/@client.GetId()">@client.GetName()</li>
+        <li><h2><a href="/clients/@client.GetId()">@client.GetName()</a></h2></li>
+        <li><a href="/clients/delete/@client.GetId()">Delete @client.GetName() as Client</a></li>
     }
-
-<p><a href="/clients/new/@Model">Add New Client</a></p>
+    </ul>

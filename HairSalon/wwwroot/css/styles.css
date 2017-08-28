@@ -3,7 +3,6 @@ body {
     background-size: cover;
     font-family: 'Marko One', serif;
     text-align: center;
-    color: #f7e2d7;
 }
 
 h1 {
@@ -27,4 +26,8 @@ button {
 
 p {
     text-align: center;
+}
+
+.inputfields {
+    align-items: right;
 }

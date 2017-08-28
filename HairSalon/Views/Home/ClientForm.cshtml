@@ -2,15 +2,17 @@
     Layout = "_Layout";
 }
 
-<form action="/clients/add/" method="post">
+<form action="/clients/add/@Model" method="post">
+
     <label for="new-client-name">Name:  </label>
     <input id="new-client-name" name="new-client-name" type="text">
-
+    <br>
     <label for="new-client-address">Address:  </label>
     <input id="new-client-address" name="new-client-address" type="text">
-
+    <br>
     <label for="new-client-phonenumber">Phone Number:  </label>
     <input id="new-client-phonenumber" name="new-client-phonenumber" type="text">
+    <br>
 
     <button type="submit">Add Client</button>
 </form>

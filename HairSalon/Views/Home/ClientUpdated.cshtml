@@ -2,14 +2,11 @@
     Layout = "_Layout";
 }
 
-<h1>Client Details:</h1>
-
+<h2>Here is your updated client information:  </h2>
 <ul>
     <li>Name:  @Model.GetName()</li>
     <li>Address:  @Model.GetAddress()</li>
     <li>Phone Number:  @Model.GetPhoneNumber()</li>
-    <li>Stylist ID:  @Model.GetStylistId()</li>
     <li>Client ID:  @Model.GetId()</li>
-
-    <h4><a href="/clients/update/@Model.GetStylistId()/@Model.GetId()">Update Client Information</a>
+    <li>Stylist ID: @Model.GetStylistId()</li>
 </ul>

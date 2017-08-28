@@ -1,0 +1,18 @@
+@{
+    Layout = "_Layout";
+}
+
+<form action="/clients/update/@Model.GetStylistId()/@Model.GetId()" method="post">
+
+    <label for="updated-client-name">Name:  </label>
+    <input id="updated-client-name" name="updated-client-name" type="text">
+    <br>
+    <label for="updated-client-address">Address:  </label>
+    <input id="updated-client-address" name="updated-client-address" type="text">
+    <br>
+    <label for="updated-client-phonenumber">Phone Number:  </label>
+    <input id="updated-client-phonenumber" name="updated-client-phonenumber" type="text">
+    <br>
+
+    <button type="submit">Update Client</button>
+</form>

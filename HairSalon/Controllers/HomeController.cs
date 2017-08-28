@@ -73,5 +73,31 @@ namespace HairSalon.Controllers
             Client selectedClient = Client.Find(clientid);
             return View(selectedClient);
         }
+
+        [HttpGet("/clients/update/{stylistid}/{clientid}")]
+        public ActionResult UpdateClient(int clientid)
+        {
+            Client clientToUpdate = Client.Find(clientid);
+            return View(clientToUpdate);
+        }
+
+        [HttpPost("/clients/update/{stylistid}/{clientid}")]
+        public ActionResult ClientUpdated(int stylistid, int clientid)
+        {
+            string updatedclientname = Request.Form["updated-client-name"];
+            string updatedclientaddress = Request.Form["updated-client-address"];
+            string updatedclientphonenumber = Request.Form["updated-client-phonenumber"];
+
+            Client updatedClient = new Client("", "", "", stylistid, clientid);
+            updatedClient.UpdateClient(updatedclientname, updatedclientaddress, updatedclientphonenumber, stylistid);
+            return View(updatedClient);
+        }
+
+        [HttpGet("/clients/delete/{clientid}")]
+        public ActionResult DeleteClient(int clientid)
+        {
+            Client.DeleteClient(clientid);
+            return View();
+        }
     }
 }
